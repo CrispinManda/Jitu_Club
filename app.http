@@ -1,0 +1,34 @@
+POST http://localhost:4400/employee/register
+Content-Type: application/json
+
+{
+    "fname": "Daniel Kitheka",
+    "lname": "Daniel Kitheka",
+    "email": "dan.kitheka@thejitu.com",
+    "cohort": "17",
+    "phone_no": "0750079567",
+    "password": "12345678"
+}
+
+gi
+
+### fetching employees
+GET http://localhost:4400/employee
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRmZTI4ZDA3LTJhM2EtNDdmNC05MDBjLWNmMzc2ZTE5OThkYiIsIm5hbWUiOiJEYW5pZWwgS2l0aGVrYSIsImVtYWlsIjoiZGFuQHlvcG1haWwuY29tIiwicm9sZSI6ImVtcGxveWVlIiwiaXNEZWxldGVkIjp0cnVlLCJpYXQiOjE3MDA3MzA4MTMsImV4cCI6MTcwMDgxNzIxM30.PAzH_8OVZD-MROpTZpA80hWWe9yUTE8g_e__vNqFH50
+
+
+### fetching one employee
+GET http://localhost:4400/employee/4098b7ca-4cd3-42f0-9504-78d94f59f162
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRmZTI4ZDA3LTJhM2EtNDdmNC05MDBjLWNmMzc2ZTE5OThkYiIsIm5hbWUiOiJEYW5pZWwgS2l0aGVrYSIsImVtYWlsIjoiZGFuQHlvcG1haWwuY29tIiwicm9sZSI6ImVtcGxveWVlIiwiaXNEZWxldGVkIjpmYWxzZSwiaWF0IjoxNzAwMzQyNjEyLCJleHAiOjE3MDAzNDYyMTJ9.YVvDdAanyf3HpS4Cgq8VJKLVxVU51zc0JBW0xYENXQ8
+
+### Delete Employee
+PUT http://localhost:4400/employee/4098b7ca-4cd3-42f0-9504-78d94f59f162
+Content-Type: application/json
+
+{
+    "isDeleted": true
+}
+
+
