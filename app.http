@@ -2,26 +2,61 @@ POST http://localhost:4400/employee/register
 Content-Type: application/json
 
 {
-    "fname": "Daniel Kitheka",
-    "lname": "Daniel Kitheka",
+    "fname": "Daniel ",
+    "lname": " Kitheka",
     "email": "dan.kitheka@thejitu.com",
     "cohort": "17",
     "phone_no": "0750079567",
     "password": "12345678"
 }
 
-gi
+##### register employee
 
-### fetching employees
+POST http://localhost:4400/employee/register
+Content-Type: application/json
+
+{
+    "fname": "Shon ",
+    "lname": " Mendez",
+    "email": "shon.mendez@thejitu.com",
+    "cohort": "18",
+    "phone_no": "0755979967",
+    "password": "12345678"
+}
+
+##### login employee
+### login 
+POST http://localhost:4400/employee/login
+Content-Type: application/json
+
+{
+    "email": "dan.kitheka@thejitu.com",
+    "password": "12345678"
+}
+
+### fetching  all employees
 GET http://localhost:4400/employee
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRmZTI4ZDA3LTJhM2EtNDdmNC05MDBjLWNmMzc2ZTE5OThkYiIsIm5hbWUiOiJEYW5pZWwgS2l0aGVrYSIsImVtYWlsIjoiZGFuQHlvcG1haWwuY29tIiwicm9sZSI6ImVtcGxveWVlIiwiaXNEZWxldGVkIjp0cnVlLCJpYXQiOjE3MDA3MzA4MTMsImV4cCI6MTcwMDgxNzIxM30.PAzH_8OVZD-MROpTZpA80hWWe9yUTE8g_e__vNqFH50
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRlZDRhZjcyLTM4NTItNDAzMi1hMjVhLTc1YmIzOWU3OTQ1ZCIsImZuYW1lIjoiRGFuaWVsICIsImxuYW1lIjoiIEtpdGhla2EiLCJlbWFpbCI6ImRhbi5raXRoZWthQHRoZWppdHUuY29tIiwiY29ob3J0IjoiMTciLCJyb2xlIjoiZW1wbG95ZWUiLCJpc0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDA5MDM2OTEsImV4cCI6MTcwMDk5MDA5MX0.EPW6m0z7yLez8qRl6Q_5IJc-NerY_BS0NN2s79thu-I
 
+### update employee
+PUT http://localhost:4400/employee/7bc912f5-4e2e-49ae-b85e-cf5b96d43d7d
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRlZDRhZjcyLTM4NTItNDAzMi1hMjVhLTc1YmIzOWU3OTQ1ZCIsImZuYW1lIjoiRGFuaWVsICIsImxuYW1lIjoiIEtpdGhla2EiLCJlbWFpbCI6ImRhbi5raXRoZWthQHRoZWppdHUuY29tIiwiY29ob3J0IjoiMTciLCJyb2xlIjoiYWRtaW4iLCJpc0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDA5MDcxMjQsImV4cCI6MTcwMDk5MzUyNH0.S-JCBq7WYkOxpJI3otb2yn5Fqx0EO2biX_v6ZqEU8dc
+
+{
+    "fname": "Shon ",
+    "lname": " Francis",
+    "email": "shon.francis@thejitu.com",
+    "cohort": "18",
+    "phone_no": "0755979967",
+    "password": "12345678"
+}
 
 ### fetching one employee
-GET http://localhost:4400/employee/4098b7ca-4cd3-42f0-9504-78d94f59f162
+GET http://localhost:4400/employee/76991875-5a02-48c6-a15c-184a4bc7151d
 Content-Type: application/json
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRmZTI4ZDA3LTJhM2EtNDdmNC05MDBjLWNmMzc2ZTE5OThkYiIsIm5hbWUiOiJEYW5pZWwgS2l0aGVrYSIsImVtYWlsIjoiZGFuQHlvcG1haWwuY29tIiwicm9sZSI6ImVtcGxveWVlIiwiaXNEZWxldGVkIjpmYWxzZSwiaWF0IjoxNzAwMzQyNjEyLCJleHAiOjE3MDAzNDYyMTJ9.YVvDdAanyf3HpS4Cgq8VJKLVxVU51zc0JBW0xYENXQ8
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBsb3llZV9pZCI6ImRlZDRhZjcyLTM4NTItNDAzMi1hMjVhLTc1YmIzOWU3OTQ1ZCIsImZuYW1lIjoiRGFuaWVsICIsImxuYW1lIjoiIEtpdGhla2EiLCJlbWFpbCI6ImRhbi5raXRoZWthQHRoZWppdHUuY29tIiwiY29ob3J0IjoiMTciLCJyb2xlIjoiYWRtaW4iLCJpc0RlbGV0ZWQiOmZhbHNlLCJpYXQiOjE3MDA5MDU1NTAsImV4cCI6MTcwMDk5MTk1MH0.4bG2uEVoexaOv7OqWUvjmp5NRRfC6j1V9m6E4BXTD08
 
 ### Delete Employee
 PUT http://localhost:4400/employee/4098b7ca-4cd3-42f0-9504-78d94f59f162
