@@ -1,0 +1,8 @@
+-- Stored Procedure: deleteEmployee
+CREATE PROCEDURE deleteEmployee
+    @employee_id VARCHAR(255)
+AS
+BEGIN
+    DELETE FROM Employees
+    WHERE employee_id = @employee_id;
+END;

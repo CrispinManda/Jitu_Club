@@ -4,6 +4,7 @@ import {   getOneEmployees,
      checkUserDetails,
      getAllEmployees,
      updateEmployee,
+     deleteEmployee,
       registerEmployee } from "../controller/employeesController";
 import { verifyToken } from "../middleware/verifyToken";
 
@@ -15,6 +16,6 @@ employee_router.get('/', verifyToken, getAllEmployees)
 employee_router.get('/check_user_details',verifyToken, checkUserDetails)
 employee_router.put('/:id', verifyToken, updateEmployee)
 employee_router.get('/:id', verifyToken, getOneEmployees)
-
+employee_router.delete('/:id', verifyToken, deleteEmployee); 
 
 export default employee_router;

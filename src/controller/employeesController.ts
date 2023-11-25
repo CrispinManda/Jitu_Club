@@ -166,6 +166,19 @@ export const updateEmployee = async (req: Request, res: Response) => {
 
     const pool = await mssql.connect(sqlConfig);
 
+       // Check if the employee with the specified employee_id exists
+       const checkEmployee = await pool
+       .request()
+       .input('employee_id', mssql.VarChar, employee_id)
+       .query('SELECT TOP 1 1 AS employeeExists FROM Employees WHERE employee_id = @employee_id');
+ 
+     if (!checkEmployee.recordset[0]?.employeeExists) {
+       return res.status(404).json({
+         error: 'Employee not found',
+       });
+     }
+ 
+
     await pool
       .request()
       .input('employee_id', mssql.VarChar, employee_id)
@@ -223,7 +236,13 @@ export const updateEmployee = async (req: Request, res: Response) => {
       });
   
     } finally {
-      await pool.close();
+      if (pool) {
+        try {
+          await pool.close();
+        } catch (closeError: any) {
+          console.error('Error closing MSSQL connection:', closeError.message);
+        }
+      }
     }
   };
 
